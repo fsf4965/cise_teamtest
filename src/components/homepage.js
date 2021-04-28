@@ -11,7 +11,9 @@ class homepage extends Component {
                     <br/>
                     <h2 className="header">SEEDS</h2>
 
-                    <Link to="/Search">Search</Link>
+                    <Link to="/Search"><button type="button">
+                    Search
+                    </button> </Link>
                     <br />
                     <br />
                     <hr />

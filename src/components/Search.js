@@ -11,7 +11,9 @@ class Search extends Component {
                     <br/>
                     <h2 className="header">Search</h2>
 
-                    <Link to="/">Homepage</Link>
+                    <Link to="/"><button type="button">
+                    Homepage
+                    </button> </Link>
                     <br />
                     <br />
                     <hr />
