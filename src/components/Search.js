@@ -11,16 +11,21 @@ class Search extends Component {
           <br />
           <h2 className="header">Search</h2>
           <div className="buttons">
-            <Link to="/">
+            <Link to="/Home">
               <button class="btn homepage" type="button">
                 Homepage
-              </button>{" "}
+              </button>
+            </Link>
+            <Link to="/">
+              <button class="btn homepage" type="button">
+                Log Out
+              </button>
             </Link>
           </div>
           <br />
           <br />
-          <hr />
         </div>
+        <hr/>
       </div>
     );
   }

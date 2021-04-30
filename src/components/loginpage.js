@@ -3,20 +3,18 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../App.css';
 
-class homepage extends Component {
+class loginpage extends Component {
     render() {
         return (
             <div className="Homepage">
                 <div className="container">
                     <br/>
-                    <h2 className="header">SEEDS</h2>
+                    <h2 className="header">Log In</h2>
+
                     <div className="buttons">
-                    <Link to="/Search"><button type="button" class="btn search">
-                    Search
-                    </button> </Link>
-                    <Link to="/"><button type="button" class="btn logout">
-                    Log Out
-                    </button> </Link>
+                        <Link to="/Home"><button class="btn login" type="button" >
+                        Login
+                        </button> </Link>
                     </div>
                 </div>
                 <br />
@@ -26,4 +24,4 @@ class homepage extends Component {
         );
     }
   }
-export default homepage;
+export default loginpage;
