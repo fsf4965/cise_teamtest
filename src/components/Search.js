@@ -20,6 +20,10 @@ class search extends Component {
                     </Link>
                     </div>
                 </div>
+                <div className="footer">
+                    <p className="footertext">Developed by</p>
+                    <p className="footertext">Victor Feng | Aaron Gilbert | Gerard Gomez</p>
+                </div>
             </div>
     );
   }
