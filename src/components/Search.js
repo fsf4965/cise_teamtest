@@ -5,18 +5,18 @@ import '../App.css';
 class search extends Component {
     render() {
         return (
-            <div class="home">
-                <div class="navbar">
-                    <ul class="navlist">
-                        <li class="navbtn"><a href="/">Home</a></li>
-                        <li class="navbtn"><a href="/search">Browse Articles</a></li>
+            <div className="home">
+                <div className="navbar">
+                    <ul className="navlist">
+                        <li className="navbtn"><a href="/">Home</a></li>
+                        <li className="navbtn"><a href="/search">Browse Articles</a></li>
                     </ul>
                 </div>
-                <div class="container">
-                    <h2 class="title">Articles</h2>                    
-                    <div class="buttons">
+                <div className="container">
+                    <h2 className="title">Articles</h2>                    
+                    <div className="buttons">
                     <Link to="/search">
-                            <button class="btn search" type="button">Search</button>
+                            <button className="btn search" type="button">Search</button>
                     </Link>
                     </div>
                 </div>
