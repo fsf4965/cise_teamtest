@@ -106,7 +106,7 @@ html {
 .buttons {
   align-items: center;
   display: flex;
-  margin-top: 50px;
+  margin-top: 25px;
   justify-content: center;
 }
 
@@ -121,11 +121,22 @@ html {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 12px;
   cursor: pointer;
 }
 
 /* filled buttons behaviour - darken */
 .btn:hover {
   background-color: #a8bfc5;
+}
+
+.textbox {
+  border: 1px solid #848484;
+	border-radius: 30px;
+	outline:0;
+	height:40px;
+  font-size: 16px;
+	width: 550px;
+	padding-left:10px;
+	padding-right:10px;
 }

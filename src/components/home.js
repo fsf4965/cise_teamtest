@@ -16,11 +16,13 @@ class home extends Component {
                     <h1 className="title">Home</h1>
                     <h2 className="header">SEEDS</h2>
                     <h3 className="subheader">CISE - Team 21</h3>
-                    <div className="buttons">
-                        <Link to="/search">
-                            <button className="btn search" type="button">Browse Articles</button>
-                        </Link>
+                    <form>
+                        <input type="text" className="textbox" name="search" placeholder="Search by Title"/>
+                        <div className="buttons">
+                        <input name="submit" className="btn" type = "button"  value = "Search"/>
+                        <input name="submit" className="btn" type = "button"  value = "Advance Search"/>
                     </div>
+                    </form>
                 </div>
                 <div className="footer">
                     <p className="footertext">Developed by</p>
