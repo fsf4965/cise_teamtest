@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
-import home from './components/home';
-import search from './components/search';
+import Homepage from './components/home';
+import Search from './components/search';
+
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
-          <Route exact path='/' component={home} />
-          <Route path='/search' component={search} />
+          <Route exact path='/' component={Homepage} />
+          <Route path='/Search' component={Search} />
         </div>
       </Router>
     );
