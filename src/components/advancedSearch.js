@@ -3,7 +3,7 @@ import '../App.css';
 
 
 
-class search extends Component {
+class advanceSearch extends Component {
 
     constructor(props) {
         super(props);
@@ -35,8 +35,8 @@ class search extends Component {
                     </ul>
                 </div>
                 <div className="container">
-                    <h2 className="title">Articles</h2>
-                    <h2 className="header">Basic Search</h2>                         
+                    <h2 className="title">Articles</h2>   
+                    <h2 className="header">Advance Search</h2>                 
                     <div className="buttons">
                     <form>
                         <input type="text" className="textbox" name="search" value={this.state.searchQuery}/>
@@ -54,4 +54,4 @@ class search extends Component {
     );
   }
 }
-export default search;
+export default advanceSearch;

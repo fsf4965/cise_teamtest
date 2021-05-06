@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import '../App.css';
 
 class home extends Component {
+
+    AdvanceSearch
+    shandleButtonClicked() {
+        window.location.href = "/search";
+    }
+    ahandleButtonClicked() {
+        window.location.href = "/AdvanceSearch";
+    }
+    
     render() {
         return (
             <div className="home">
@@ -10,19 +18,22 @@ class home extends Component {
                     <ul className="navlist">
                         <li className="navbtn"><a href="/">Home</a></li>
                         <li className="navbtn"><a href="/search">Browse Articles</a></li>
+                        <li className="navbtn"><a href="/AdvancedSearch">Advance Search</a></li>
                     </ul>
                 </div>
                 <div className="container">
                     <h1 className="title">Home</h1>
                     <h2 className="header">SEEDS</h2>
                     <h3 className="subheader">CISE - Team 21</h3>
-                    <form>
-                        <input type="text" className="textbox" name="search" placeholder="Search by Title"/>
-                        <div className="buttons">
-                        <input name="submit" className="btn" type = "button"  value = "Search"/>
-                        <input name="submit" className="btn" type = "button"  value = "Advance Search"/>
+                    <div className="buttons">
+
+                        <button className="btn" onClick={this.shandleButtonClicked.bind(this)}>
+                        Basic Search
+                        </button>
+                        <button className="btn" onClick={this.ahandleButtonClicked.bind(this)}>
+                        Advanced Search
+                        </button>
                     </div>
-                    </form>
                 </div>
                 <div className="footer">
                     <p className="footertext">Developed by</p>
