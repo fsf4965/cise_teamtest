@@ -3,21 +3,16 @@ import '../App.css';
 
 
 
-class advanceSearch extends Component {
+class search extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-
-        }
+            searchQuery: ''
+        };
     }
 
-    handleButtonClicked() {
-        var searchQuery = this.state.searchQuery;
-    
-        window.location.href = "/search" + searchQuery;
-    }
     handleInputChanged(event) {
         this.setState({
           searchQuery: event.target.value
@@ -35,16 +30,10 @@ class advanceSearch extends Component {
                     </ul>
                 </div>
                 <div className="container">
-                    <h2 className="title">Articles</h2>   
-                    <h2 className="header">Advance Search</h2>                 
-                    <div className="buttons">
-                    <form>
-                        <input type="text" className="textbox" name="search" value={this.state.searchQuery}/>
-                        <div className="buttons">
-                        <input name="submit" className="btn" type = "button" onClick={this.handleButtonClicked.bind(this)} value = "Search"/>
-                        </div>
-                    </form>
-                    </div>
+                    <h2 className="title">Articles</h2>
+                    <h2 className="header">Basic Search</h2>                         
+                    <input type="text" className="textbox" name="search" onChange={this.handleInputChanged.bind(this)} value={this.state.searchQuery}/>
+                    <p>{this.state.searchQuery}</p>
                 </div>
                 <div className="footer">
                     <p className="footertext">Developed by</p>
@@ -54,4 +43,4 @@ class advanceSearch extends Component {
     );
   }
 }
-export default advanceSearch;
+export default search;
