@@ -8,7 +8,7 @@ class home extends Component {
         window.location.href = "/search";
     }
     ahandleButtonClicked() {
-        window.location.href = "/AdvanceSearch";
+        window.location.href = "/advancedSearch";
     }
     
     render() {
@@ -18,7 +18,7 @@ class home extends Component {
                     <ul className="navlist">
                         <li className="navbtn"><a href="/">Home</a></li>
                         <li className="navbtn"><a href="/search">Browse Articles</a></li>
-                        <li className="navbtn"><a href="/AdvancedSearch">Advance Search</a></li>
+                        <li className="navbtn"><a href="/advancedSearch">Advanced Search</a></li>
                     </ul>
                 </div>
                 <div className="container">

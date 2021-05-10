@@ -26,13 +26,13 @@ class search extends Component {
                     <ul className="navlist">
                         <li className="navbtn"><a href="/">Home</a></li>
                         <li className="navbtn"><a href="/search">Browse Articles</a></li>
-                        <li className="navbtn"><a href="/AdvancedSearch">Advance Search</a></li>
+                        <li className="navbtn"><a href="/advancedSearch">Advance Search</a></li>
                     </ul>
                 </div>
                 <div className="container">
                     <h2 className="title">Articles</h2>
-                    <h2 className="header">Basic Search</h2>                         
-                    <input type="text" className="textbox" onChange={this.handleInputChanged.bind(this)} value={this.state.searchQuery}/>
+                    <h2 className="header">Basic Title Search</h2>                         
+                    <input className="textbox" onChange={this.handleInputChanged.bind(this)} value={this.state.searchQuery}/>
                     <p>{this.state.searchQuery}</p>
                 </div>
                 <div className="footer">
