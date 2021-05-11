@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import '../App.css';
+import entryCard from './entryCard';
 
 
 
@@ -9,16 +11,43 @@ class search extends Component {
         super(props);
 
         this.state = {
-            searchQuery: ''
+
+            entry: []
         };
     }
+
+    componentDidMount() {
+        axios
+          .get('http://localhost:8082/api/entries')
+          .then(res => {
+            this.setState({
+                entry: res.data
+            })
+          })
+          .catch(err =>{
+            console.log('Error from ShowBookList');
+          })
+      };
 
     handleInputChanged(event) {
         this.setState({
           searchQuery: event.target.value
         });
-      }
+    }
+
     render() {
+        const entry = this.state.entry;
+        console.log("Article: " + entry);
+        let Articles;
+
+        if(!entry) {
+            Articles = "there is no book record!";
+          } else {
+            Articles = entry.map((entry, i) =>
+              <entryCard entry={entry} key={i} />
+            );
+        }
+
         return (
 
             <div className="home">
@@ -35,6 +64,10 @@ class search extends Component {
                     <input className="textbox" onChange={this.handleInputChanged.bind(this)} value={this.state.searchQuery}/>
                     <p>{this.state.searchQuery}</p>
                 </div>
+                <div>
+                    {Articles}<p>sadas</p>
+                </div>
+
                 <div className="footer">
                     <p className="footertext">Developed by</p>
                     <p className="footertext">Victor Feng | Aaron Gilbert | Gerard Gomez</p>
