@@ -4,8 +4,9 @@ var cors = require('cors');
 
 //
 /* This code have issue
-const entry = require('./routes/api/entries');
+
 */
+const entry = require('./routes/api/entries');
 const app = express();
 
 // Connect Database

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const entrySchema = new Schema({
+const entrySchema = new mongoose.Schema({
     author: {
         type: String,
         required: true
@@ -35,5 +35,5 @@ const entrySchema = new Schema({
     annote: {
         type: String
     }
-})
+});
 module.exports = entry = mongoose.model("Entry", entrySchema);
