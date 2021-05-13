@@ -1,24 +1,27 @@
+// app.js
+
 const express = require('express');
 const connectDB = require('./config/db');
 var cors = require('cors');
 
-//
-/* This code have issue
+// routes
+const books = require('./routes/api/books');
 
-*/
-const entry = require('./routes/api/entries');
 const app = express();
 
 // Connect Database
 connectDB();
 
-app.use(express.json({ extended: false }));
-
+// cors
 app.use(cors({ origin: true, credentials: true }));
+
+// Init Middleware
+app.use(express.json({ extended: false }));
 
 app.get('/', (req, res) => res.send('Hello world!'));
 
-app.use('/api/entries', entry);
+// use Routes
+app.use('/api/books', books);
 
 const port = process.env.PORT || 8082;
 
