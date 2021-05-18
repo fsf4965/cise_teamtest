@@ -10,10 +10,10 @@ class search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      books: []
+      books: [],
+      sort: 'title'
     };
   }
-
     componentDidMount() {
         axios
           .get('http://localhost:8082/api/books')
@@ -27,16 +27,33 @@ class search extends Component {
           })
     };
 
+    sort(list){
+
+    }
+
     handleInputChanged(event){
         this.setState({
           searchQuery: event.target.value
         });
     }
+    handleSelect(event){
+      this.setState({
+        sort: event.target.value
+      });
+      
+  }
 
     render() {
       const books = this.state.books;
+      if(this.state.sort === 'title'){
+        books.sort((a,b) => (a.title > b.title)? 1 : (a.title === b.title) -1)
+      }
+      if(this.state.sort === 'year'){
+        books.sort((a,b) => (a.year > b.year)? 1 : -1)
+      }
       console.log("PrintBook: " + books);
       let bookList;
+      
   
       if(!books) {
         bookList = "there is no book record!";
@@ -44,6 +61,7 @@ class search extends Component {
         bookList = books.map((book, k) =>
           <BookCard book={book} key={k} />
         );
+        
       }
 
         return (
@@ -61,6 +79,11 @@ class search extends Component {
                     <h2 className="header">Basic Title Search</h2>                         
                     <input className="textbox" onChange={this.handleInputChanged.bind(this)} value={this.state.searchQuery}/>
                     <p>{this.state.searchQuery}</p>
+                    <label>Sort by:</label>
+                    <select onChange={this.handleSelect.bind(this)} value={this.state.sort} >
+                      <option value="title">Title</option>
+                      <option value="year">Year</option>
+                    </select>
                 </div>
                 <table>
                 <tr>
