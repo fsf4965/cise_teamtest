@@ -11,7 +11,9 @@ class search extends Component {
     super(props);
     this.state = {
       books: [],
-      sort: 'title'
+      sbooks: [],
+      sort: 'title',
+      searchQuery: ''
     };
   }
     componentDidMount() {
@@ -45,11 +47,18 @@ class search extends Component {
 
     render() {
       const books = this.state.books;
+
+      // sorting
       if(this.state.sort === 'title'){
         books.sort((a,b) => (a.title > b.title)? 1 : (a.title === b.title) -1)
       }
       if(this.state.sort === 'year'){
         books.sort((a,b) => (a.year > b.year)? 1 : -1)
+      }
+
+      // title search here
+      if(this.state.searchQuery!==''){
+        books.filter(book => book.toLowerCase().indexOf(this.state.searchQuery.toLowerCase()) !== -1)
       }
       console.log("PrintBook: " + books);
       let bookList;
