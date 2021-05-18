@@ -1,52 +1,50 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../App.css';
-import entryCard from './entryCard';
+import BookCard from './BookCard';
 
 
 
 class search extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-
-            entry: []
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      books: []
+    };
+  }
 
     componentDidMount() {
         axios
-          .get('http://localhost:8082/api/entries')
-          .then(res => {
-            this.setState({
-                entry: res.data
+          .get('http://localhost:8082/api/books')
+          .then(res =>
+             { this.setState({
+              books: res.data
             })
           })
           .catch(err =>{
-            console.log('Error from ShowBookList');
+            console.log('Error');
           })
-      };
+    };
 
-    handleInputChanged(event) {
+    handleInputChanged(event){
         this.setState({
           searchQuery: event.target.value
         });
     }
 
     render() {
-        const entry = this.state.entry;
-        console.log("Article: " + entry);
-        let Articles;
-
-        if(!entry) {
-            Articles = "there is no book record!";
-          } else {
-            Articles = entry.map((entry, i) =>
-              <entryCard entry={entry} key={i} />
-            );
-        }
+      const books = this.state.books;
+      console.log("PrintBook: " + books);
+      let bookList;
+  
+      if(!books) {
+        bookList = "there is no book record!";
+      } else {
+        bookList = books.map((book, k) =>
+          <BookCard book={book} key={k} />
+        );
+      }
 
         return (
 
@@ -64,9 +62,22 @@ class search extends Component {
                     <input className="textbox" onChange={this.handleInputChanged.bind(this)} value={this.state.searchQuery}/>
                     <p>{this.state.searchQuery}</p>
                 </div>
-                <div>
-                    {Articles}<p>sadas</p>
-                </div>
+                <table>
+                <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Journal</th>
+                <th>Year</th>
+                <th>Eprint</th>
+                <th>Eprint Type</th>
+                <th>Eprint Class</th>
+                <th>Pages</th>
+                <th>Month</th>
+                <th>Annote</th>
+                </tr>
+                {bookList}
+                </table>
+                
 
                 <div className="footer">
                     <p className="footertext">Developed by</p>
