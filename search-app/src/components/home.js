@@ -26,7 +26,6 @@ class home extends Component {
                     <h2 className="header">SEEDS</h2>
                     <h3 className="subheader">CISE - Team 21</h3>
                     <div className="buttons">
-
                         <button className="btn" onClick={this.shandleButtonClicked.bind(this)}>
                         Basic Search
                         </button>
