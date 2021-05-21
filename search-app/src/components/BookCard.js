@@ -8,14 +8,10 @@ const BookCard = (props) => {
             <tr>
                 <td>{book.title}</td>
                 <td>{book.author}</td>
-                <td>{book.journal}</td>
                 <td>{book.year}</td>
-                <td>{book.eprint}</td>
-                <td>{book.eprinttype}</td>
-                <td>{book.eprintclass}</td>
-                <td>{book.pages}</td>
-                <td>{book.month}</td>
-                <td>{book.annote}</td> 
+                <td>{book.method}</td>
+                <td>{book.claim}</td>
+                <td>{book.strength}</td>
             </tr>
     )
 };
