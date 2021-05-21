@@ -97,7 +97,7 @@ class search extends Component {
                     <select onChange={this.handleSelect.bind(this)} value={this.state.sort} >
                       <option value="title">Title</option>
                       <option value="year">Year</option>
-                      <option value="year">Method</option>
+                      <option value="method">Method</option>
                     </select>
                 </div>
                 <table>
