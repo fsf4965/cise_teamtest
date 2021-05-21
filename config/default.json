@@ -1,0 +1,4 @@
+{
+    "mongoURI":
+      "mongodb+srv://Victor:123@cluster0.epilo.mongodb.net/articlesDB?retryWrites=true&w=majority"
+  }

@@ -1,0 +1,146 @@
+/* base styling of index.html */
+html {
+  background-color: #202020;
+  text-align: center;
+}
+
+/* base styling of app */
+.home {
+  background-color: #202020;
+  color: white;
+  height: 100%;
+  width: 100%;
+  font-family: "Lucia Console", sans-serif;
+}
+
+/* container for main contents of page */
+.container {
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+
+/* page title, top left */
+.title {
+  color: #c5dee4;
+  font-size: 3em;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-left: 20px;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+/* central header */
+.header {
+  color: #5aa9bd;
+  font-size: 3em;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* subheader of central header */
+.subheader {
+  color: #c5dee4;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* footer */
+.footer {
+  color: #5aa9bd;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 10px;
+}
+
+/* text of footer */
+.footertext {
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* navigation bar - div format */
+.navbar {
+  position: fixed;
+  height: 10%;
+  width: 100%;
+}
+
+/* navigation list - ul format */
+.navlist {
+  list-style-type: none;
+  margin-left: 0;
+  margin-top: 0;
+  width: auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* navigation list items - li a format */
+.navbtn a{
+  color: #5aa9bd;
+  border: 1px solid #5aa9bd;
+  border-radius: 40px;
+  display: block;
+  float: left;
+  padding: 15px 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* behaviour of navigation list items - darken */
+.navbtn a:hover {
+  background-color: #161616;
+}
+
+/* container for center buttons - div format */
+.buttons {
+  align-items: center;
+  display: flex;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+/* filled buttons */
+.btn {  
+  background-color:  #c5dee4;
+  color: black;
+  border: none;
+  border-radius: 40px;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 12px;
+  cursor: pointer;
+}
+
+/* filled buttons behaviour - darken */
+.btn:hover {
+  background-color: #a8bfc5;
+}
+
+.textbox {
+  border: 1px solid #848484;
+	border-radius: 30px;
+	outline:0;
+	height:40px;
+  font-size: 16px;
+	width: 550px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
