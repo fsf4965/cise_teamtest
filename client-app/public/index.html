@@ -24,10 +24,20 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>CISE - SEEDS</title>
+    <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div >
+    <label>Please choose your user type:</label>
+    <form method="get" action="/show-books">
+      <button type="submit">User</button>
+    </form>
+    <form method="get" action="/show-books_admin">
+      <button type="submit">Admin</button>
+    </form>
+    
     <div id="root"></div>
     <!--
       This HTML file is a template.

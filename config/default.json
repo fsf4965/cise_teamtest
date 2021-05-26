@@ -1,4 +1,4 @@
 {
-    "mongoURI":
-      "mongodb+srv://Victor:123@cluster0.epilo.mongodb.net/articlesDB?retryWrites=true&w=majority"
-  }
+  "mongoURI":
+    "mongodb+srv://cise:cise@cluster0.b8jg8.mongodb.net/cise25?retryWrites=true&w=majority"
+}

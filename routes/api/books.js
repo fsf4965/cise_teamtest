@@ -1,23 +1,39 @@
-// routes/api/books.js
-
+// app.js
+const path = require('path'); 
 const express = require('express');
-const router = express.Router();
+const connectDB = require('./config/db');
+var cors = require('cors');
+require("dotenv").config({path: "./config.env"});
 
-// Load Book model
-const Book = require('../../models/Book');
+// routes
+const books = require('./routes/api/books');
 
-// @route GET api/books/test
-// @description tests books route
-// @access Public
-router.get('/test', (req, res) => res.send('book route testing!'));
+const app = express();
 
-// @route GET api/books
-// @description Get all books
-// @access Public
-router.get('/', (req, res) => {
-  Book.find()
-    .then(book => res.json(book))
-    .catch(err => res.status(404).json({ nobooksfound: 'No Books found' }));
-});
+// Connect Database
+connectDB();
 
-module.exports = router 
+// cors
+app.use(cors({ origin: true, credentials: true }));
+
+// Init Middleware
+app.use(express.json({ extended: false }));
+
+// use Routes
+app.use('/api/books', books);
+
+if(process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "/client-app/build")));
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname,"client-app","build","index.html"));
+    });
+} else{
+    app.get("/", (req,res) =>{
+        res.send("api running");
+    });
+}
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Server running on port ${port}`));
